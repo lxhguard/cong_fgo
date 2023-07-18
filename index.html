@@ -506,42 +506,6 @@
     </div>
     </div>
     <script>
-        const HOST = "https://mihayos.com/luanxie.php";
-
-        function Ajax(url, data, header = {}) {
-            return $.ajax({
-                url: url,
-                data: data,
-                headers: header,
-                type: 'post',
-                dataType: 'json',
-                async: true,
-                timeOut: 100000,
-                processData: true,
-                contentType: false,
-                xhrFields: {
-                    withCredentials: true,
-                },
-                success: function (res) {
-                },
-                error: function (XMLHttpRequest, textStatus, errorThrown,) {
-                    if (XMLHttpRequest.status === 429) {
-                        vant.Dialog({
-                            message: '请求过于频繁,请稍后再试',
-                            className: "alert",
-                            confirmButtonText: '确定'
-                        });
-                        return;
-                    }
-                    //	console.log(XMLHttpRequest.status )
-                    vant.Dialog({
-                        message: '连接失败,请检查网络是否异常',
-                        className: "alert",
-                        confirmButtonText: '确定'
-                    });
-                },
-            })
-        }
 
         var app = new Vue({
             el: "#app",
@@ -747,73 +711,74 @@
 
         /** 防止别人偷代码 */
 
-        window.onload = function () {
-            const protectCodeKey = () => {
-                document.onkeydown = function () {
-                    const e = window.event || arguments[0]
-                    // F12
-                    if (e.keyCode == 123)
-                        return false
-                    // Ctrl+Shift+I
+        // window.onload = function () {
+        //     const protectCodeKey = () => {
+        //         document.onkeydown = function () {
+        //             const e = window.event || arguments[0]
+        //             // F12
+        //             if (e.keyCode == 123)
+        //                 return false
+        //             // Ctrl+Shift+I
 
-                    else if ((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73))
-                        return false
-                    // Shift+F10
+        //             else if ((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73))
+        //                 return false
+        //             // Shift+F10
 
-                    else if ((e.shiftKey) && (e.keyCode == 121))
-                        return false
-                    // Ctrl+U
+        //             else if ((e.shiftKey) && (e.keyCode == 121))
+        //                 return false
+        //             // Ctrl+U
 
-                    else if ((e.ctrlKey) && (e.keyCode == 85))
-                        return false
-                }
-                // 屏蔽鼠标右键
-                document.oncontextmenu = function () {
-                    return false
-                }
-            }
+        //             else if ((e.ctrlKey) && (e.keyCode == 85))
+        //                 return false
+        //         }
+        //         // 屏蔽鼠标右键
+        //         document.oncontextmenu = function () {
+        //             return false
+        //         }
+        //     }
 
-            const protectCode = () => {
-                protectCodeKey();
-                ((function () {
-                    let callbacks: any[] = []
-                    const timeLimit = 50
-                    let open = false
-                    setInterval(loop, 1)
-                    return {
-                        addListener(fn: any) {
-                            callbacks.push(fn)
-                        },
-                        cancleListenr(fn: any) {
-                            callbacks = callbacks.filter((v) => {
-                                return v !== fn
-                            })
-                        },
-                    }
+        //     const protectCode = () => {
+        //         protectCodeKey();
+        //         ((function () {
+        //             let callbacks: any[] = []
+        //             const timeLimit = 50
+        //             let open = false
+        //             setInterval(loop, 1)
+        //             return {
+        //                 addListener(fn: any) {
+        //                     callbacks.push(fn)
+        //                 },
+        //                 cancleListenr(fn: any) {
+        //                     callbacks = callbacks.filter((v) => {
+        //                         return v !== fn
+        //                     })
+        //                 },
+        //             }
 
-                    function loop() {
-                        const startTime = new Date()
-                        debugger
-                        if (new Date() - startTime > timeLimit) {
-                            if (!open) {
-                                callbacks.forEach((fn) => {
-                                    fn.call(null)
-                                })
-                            }
-                            open = true
-                            window.stop()
-                            // alert('⚠️禁止');
-                            document.body.innerHTML = ''
-                        }
-                        else {
-                            open = false
-                        }
-                    }
-                })()).addListener(() => {
-                    window.location.reload()
-                })
-            }
-        }
+        //             function loop() {
+        //                 const startTime = new Date()
+        //                 debugger
+        //                 if (new Date() - startTime > timeLimit) {
+        //                     if (!open) {
+        //                         callbacks.forEach((fn) => {
+        //                             fn.call(null)
+        //                         })
+        //                     }
+        //                     open = true
+        //                     window.stop()
+        //                     // alert('⚠️禁止');
+        //                     document.body.innerHTML = ''
+        //                 }
+        //                 else {
+        //                     open = false
+        //                 }
+        //             }
+        //         })()).addListener(() => {
+        //             window.location.reload()
+        //         })
+        //     }
+        // }
+
 
 
 
