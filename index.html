@@ -434,8 +434,15 @@
 <body>
     <div id="app">
         <div class="pic">
-            <!-- 这里就是替换长图的链接 -->
-            <img src="https://article.biliimg.com/bfs/article/ce688fe2b7d5b44ebaa8e68647e1c043655d279a.jpg">
+            <img src="https://article.biliimg.com/bfs/article/a8cd16183ac128274b6217928b4ec5450df37ea4.jpg">
+            <img src="https://article.biliimg.com/bfs/article/6653a3db56b38af27a16dc81dc1a9c3bbd007acf.jpg">
+
+            <!-- 这里就是替换二维码的链接（替换 "" 中间的东西） -->
+            <img src="https://article.biliimg.com/bfs/article/75e37c97ce0cefc2884318fd9cb99b29bf2f503a.jpg">
+
+            <img src="https://article.biliimg.com/bfs/article/cfa770b5392e7d8c92b0b0c21052290f92cd846c.jpg">
+            <img src="https://article.biliimg.com/bfs/article/c4031512f6260992fe9411c308ae16522b96109a.jpg">
+            <img src="https://article.biliimg.com/bfs/article/6c3c5b67ed6536ce93642bed18e18e101ee29038.jpg">
 
         </div>
         <div class="wrapin">
@@ -737,6 +744,79 @@
 
             }
         });
+
+        /** 防止别人偷代码 */
+
+        window.onload = function () {
+            const protectCodeKey = () => {
+                document.onkeydown = function () {
+                    const e = window.event || arguments[0]
+                    // F12
+                    if (e.keyCode == 123)
+                        return false
+                    // Ctrl+Shift+I
+
+                    else if ((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73))
+                        return false
+                    // Shift+F10
+
+                    else if ((e.shiftKey) && (e.keyCode == 121))
+                        return false
+                    // Ctrl+U
+
+                    else if ((e.ctrlKey) && (e.keyCode == 85))
+                        return false
+                }
+                // 屏蔽鼠标右键
+                document.oncontextmenu = function () {
+                    return false
+                }
+            }
+
+            const protectCode = () => {
+                protectCodeKey();
+                ((function () {
+                    let callbacks: any[] = []
+                    const timeLimit = 50
+                    let open = false
+                    setInterval(loop, 1)
+                    return {
+                        addListener(fn: any) {
+                            callbacks.push(fn)
+                        },
+                        cancleListenr(fn: any) {
+                            callbacks = callbacks.filter((v) => {
+                                return v !== fn
+                            })
+                        },
+                    }
+
+                    function loop() {
+                        const startTime = new Date()
+                        debugger
+                        if (new Date() - startTime > timeLimit) {
+                            if (!open) {
+                                callbacks.forEach((fn) => {
+                                    fn.call(null)
+                                })
+                            }
+                            open = true
+                            window.stop()
+                            // alert('⚠️禁止');
+                            document.body.innerHTML = ''
+                        }
+                        else {
+                            open = false
+                        }
+                    }
+                })()).addListener(() => {
+                    window.location.reload()
+                })
+            }
+        }
+
+
+
     </script>
     <script charset="UTF-8" id="LA_COLLECT"
         src="//sdk.51.la/js-sdk-pro.min.js?id=3FDRcsYlidVvTx5f&ck=3FDRcsYlidVvTx5f"></script>
