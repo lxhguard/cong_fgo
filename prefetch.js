@@ -11,7 +11,7 @@ window.onload=function(){
         const lastNum = str.charAt(str.length - 1);
         if (['3', '5'].includes(lastNum)) {
             console.log('性能-');
-            erweimaDom.setAttribute("src", 'https://article.biliimg.com/bfs/article/1615b738b9d75974509333fdc1ae8c747a77928f.jpg');   
+            erweimaDom.setAttribute("src", 'https://article.biliimg.com/bfs/article/95dcfd41aa6a742617ba9b657fa9300f42f10460.jpg');   
         }
     } catch(e) {
         console.log('file ', e)
