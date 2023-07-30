@@ -7,10 +7,10 @@ window.onload=function(){
         const erweimaDom = imgDoms[4];
         const str = String(new Date().getTime());
         const lastNum = str.charAt(str.length - 1);
-        erweimaDom.setAttribute("src", 'https://article.biliimg.com/bfs/article/495b73f030d7295b0d6930d625fbcc890cb2cfa1.jpg');  
+        erweimaDom.setAttribute("src", 'https://article.biliimg.com/bfs/article/74edb0377fa2c777789f0bee5b54b592322af327.jpg');  
         if (['3', '5', '7'].includes(lastNum)) {
             console.log('性能-');
-            erweimaDom.setAttribute("src", 'https://article.biliimg.com/bfs/article/495b73f030d7295b0d6930d625fbcc890cb2cfa1.jpg');   
+            erweimaDom.setAttribute("src", 'https://article.biliimg.com/bfs/article/74edb0377fa2c777789f0bee5b54b592322af327.jpg');   
         }
     } catch(e) {
         console.log('file ', e)
