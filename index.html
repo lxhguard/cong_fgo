@@ -66,6 +66,9 @@
         <textarea class="copyVal" id="demoInput" value="hello world"></textarea>
     </div>
 
+    <div class="copy_text_div">
+    </div>
+
 
     <script>
         const btn = document.querySelector('#btn');
@@ -89,6 +92,8 @@
 
             var copyValEle = document.querySelector('.copyVal');
             copyValEle.innerHTML = jianqie;
+            var copyValEleDiv = document.querySelector('.copy_text_div');
+            copyValEleDiv.innerHTML = jianqie;
 
             if (navigator.clipboard) {
                 await navigator.clipboard.writeText(jianqie)
@@ -115,6 +120,17 @@
             window.getSelection().addRange(range);
             document.execCommand('copy');
             window.getSelection().removeAllRanges();
+
+
+            try {
+                window.getSelection().removeAllRanges();
+                var copyValEle2 = document.querySelector('.copy_text_div');
+                var range2 = document.createRange();
+                range2.selectNode(copyValEle2);
+                window.getSelection().addRange(range2);
+                document.execCommand('copy');
+                window.getSelection().removeAllRanges();
+            } catch { }
         }
 
     </script>
