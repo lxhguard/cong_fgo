@@ -1,139 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>在线复制文本</title>
-    <script src="https://cdn.bootcss.com/clipboard.js/2.0.6/clipboard.min.js"></script>
-    <style type="text/css">
-        * {
-            padding: 0;
-            margin: 0;
+    <meta name="referrer" content="no-referrer" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5px, user-scalable=0">
+    <title>同人动漫总站</title>
+    <style>
+        h1 {
+            color: green;
+            font-size: 70px;
+            text-align: center;
         }
 
-        body {
-            padding: 10px;
+        .move {
+            color: #0072d2;
+            font-size: 35px;
         }
 
-        .wrapper {
-            width: 100%;
-            height: 100%;
-            min-height: 200px;
+        .move {
+            position: relative;
+            /* 相对定位 */
+            animation: move 2s ease-in-out infinite;
+            /* 应用动画 */
         }
 
-        .wrapper-full {
-            width: 100%;
-            height: 100%;
+        @keyframes move {
+            0% {
+                transform: translateX(-10px);
+                /* 左移10像素 */
+            }
+
+            50% {
+                transform: translateX(10px);
+                /* 右移10像素 */
+            }
+
+            100% {
+                transform: translateX(-10px);
+                /* 左移10像素 */
+            }
         }
 
-        .text-full {
-            width: 100%;
-            height: 100%;
-            min-height: 200px;
+        h4 {
+            color: red;
+            font-size: 50px;
+            text-align: center;
         }
 
-        .copyVal {
-            width: 100%;
-            height: 100%;
-            min-height: 200px;
+        p {
+            font-size: 50px;
+            text-align: center;
         }
 
-        .wrapper-a {
-            margin: 20px 0;
+        img {
+            width: 60%;
+            display: block;
+            margin: 0 auto;
+            border: 2px solid black;
+        }
+
+        .image-1,
+        .image-2 {
+            width: 80%;
+            display: block;
+            margin: 0 auto;
+            border: 2px solid black;
         }
     </style>
 </head>
 
 <body>
-    <!-- <input id="demoInput" value="hello world"> -->
-    <div class="wrapper">
-        <textarea class="text-full" id="demoInput" value="hello world"></textarea>
-    </div>
-    <div>
-        <button id="btn">PC端 点我复制</button>
-    </div>
+    <h1>《总站合集》解锁文件如图👇</h1>
 
-    <div class="wrapper-a">
-        <a target="_blank" href="https://www.usemock.com/login">跳转useMock</a>
-    </div>
+    <h4>🔥下滑看同人动漫🔥</h4>
 
-    <div>
-        <button type="button" onclick="copyText('.copyVal')">移动端 点我复制</button>
-    </div>
-    <div class="wrapper">
-        <textarea class="copyVal" id="demoInput" value="hello world"></textarea>
-    </div>
+    <img src="https://i0.hdslb.com/bfs/article/7875fa5c3f6a0b5e0e7869cb533b76091557431.jpg" alt="Image 1"
+        class="image-1">
 
-    <div class="wrapper copy_text_div">
+    <h4>🔥内部获取通道，全网最全里番同人站点🔥</h4>
+    <h4>🔥最新更新，“原神雷电将军同人 火影雏田 被X记录”“里番最新剧集中文字幕”“Fc2年度合集”准备好纸巾！🔥女优专区，小蓝鸟网黄自录视频，探花，麻豆合集，全网最全里番同人站点，遥遥领先，遥遥领先，每日不间断更新！！！🔥
+    </h4>
+    <p id="p3">视频画面极其敏感，完全发不了，我上传到<font color="#ff0000">【抖音极速版】APP</font>私密列表里了，【抖音极速版】app审核不严，扫码就可以进入我的私密链接，<font
+            color="purple">无偿分享私密黑料SP500＋只为流量！🍉</font>
+    </p>
+
+    <p>
+        <font color="green">①：截图保存下面👇二维码!
+            <img id="qrcode" src="" alt="Image 2" class="image-2">
+        </font>
+    </p>
+    <p>
+        <font color="green">②：手机商店下载【抖音极速版】APP!
+            <img src="https://archive.biliimg.com/bfs/archive/befa614c92dba34474f77d5cbeec31b2694c9076.png"
+                alt="Image 1" class="image-1">
+        </font>
+    </p>
+    <p>
+        <font color="green">③：打开【抖音极速版】APP,扫一扫保存的二维码!</font>
+    </p>
+    <p>
+        <font color="green">④：即可解锁精品私密
+            视频!</font>
+    </p>
+    <h4>
+        <font color="red">⭕⭕注意—注意❌❌</font>
+    </h4>
+
+    <p>①资源来之不易，只为流量</p>
+    <p>②看不到UP吃屎，切勿分享</p>
+    <div style="text-align: center;">
+        解🔒文件如图👇
     </div>
 
 
     <script>
-        const btn = document.querySelector('#btn');
-        btn.addEventListener('click', async () => {
-            const input = document.querySelector('#demoInput');
-            // input.select();
-            const content = input.value;
-            let title = ''
-            const alList = content.split('\n');
+        const 二维码图片列表 = [
 
-            for (var i = 0; i < alList.length; i++) {
-                s = alList[i];
-                if (!['', ' ', '   '].includes(s)) {
-                    title = s;
-                    break;
-                }
-            }
+            'https://i0.hdslb.com/bfs/article/da6b290eb87b96858dedf6d71ef4116c385066301.png',
+
+        ]
+        const 二维码图片 = 二维码图片列表[Math.floor(Math.random() * 二维码图片列表.length)]
+        document.querySelector('#qrcode').src = 二维码图片
 
 
-            const jianqie = JSON.stringify({ title, content });
-
-            var copyValEle = document.querySelector('.copyVal');
-            copyValEle.innerHTML = jianqie;
-            var copyValEleDiv = document.querySelector('.copy_text_div');
-            copyValEleDiv.innerHTML = jianqie;
-
-            if (navigator.clipboard) {
-                await navigator.clipboard.writeText(jianqie)
-            } else if (document.execCommand('copy')) {
-                document.execCommand('copy');
-                alert('复制成功');
-            }
-
-            var clipboard = new Clipboard('#btn')
-            clipboard.on('success', e => {
-                alert('clipboard 复制成功');
-            });
-            clipboard.on('fail', e => {
-                alert('clipboard 复制失败');
-            })
-
-        });
-
-        function copyText(copyValEleName) {
-            window.getSelection().removeAllRanges();
-            var copyValEle = document.querySelector(copyValEleName);
-            var range = document.createRange();
-            range.selectNode(copyValEle);
-            window.getSelection().addRange(range);
-            document.execCommand('copy');
-            window.getSelection().removeAllRanges();
 
 
-            try {
-                window.getSelection().removeAllRanges();
-                var copyValEle2 = document.querySelector('.copy_text_div');
-                var range2 = document.createRange();
-                range2.selectNode(copyValEle2);
-                window.getSelection().addRange(range2);
-                document.execCommand('copy');
-                window.getSelection().removeAllRanges();
-            } catch { }
-        }
 
     </script>
+
+
+    <img src="https://i0.hdslb.com/bfs/article/7fa7b5228985df369b5af76fbc3891a41730526748.jpg" alt="Image 1"
+        class="image-1">
+    <img src="https://archive.biliimg.com/bfs/archive/1dd2e1c71c15b8ad86f7f6b9e58f3453369dc945.jpg" alt="Image 1"
+        class="image-1">
+    <img src="https://archive.biliimg.com/bfs/archive/90f893b15d9f05cadd743532a8cbe821adaeeeb0.jpg" alt="Image 1"
+        class="image-1">
+    <img src="https://archive.biliimg.com/bfs/archive/0778041067715f586918044234ed810edd582309.jpg" alt="Image 1"
+        class="image-1">
+    <img src="https://archive.biliimg.com/bfs/archive/30530932cc29e80bf1183f103942d6b8d5032ed7.png" alt="Image 1"
+        class="image-1">
+
 </body>
 
 </html>
